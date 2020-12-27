@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _coinPrefab: {fileID: 2922857062024374254, guid: 0a4ac90979ded9c4ea8b6e7c7ebc6983,
     type: 3}
-  _coins:
+  _spawnPoint:
   - {fileID: 217173426}
   - {fileID: 774365552}
   - {fileID: 1784511583}
@@ -1667,7 +1667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1763411924}
   m_Layer: 0
-  m_Name: Coins
+  m_Name: CoinPlaces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

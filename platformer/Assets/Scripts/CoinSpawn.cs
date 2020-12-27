@@ -5,11 +5,11 @@ using UnityEngine;
 public class CoinSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject _coinPrefab;
-    [SerializeField] private GameObject[] _coins = new GameObject[4];
+    [SerializeField] private GameObject[] _spawnPoints = new GameObject[4];
 
     private void Start()
     {
-        foreach (var coin in _coins)
+        foreach (var coin in _spawnPoints)
         {
             Instantiate(_coinPrefab, coin.transform);
         }

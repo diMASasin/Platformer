@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
 
     private Vector2 _velocity;
     private Vector2 _targetVelocity;
-    private Rigidbody2D _rb2d;
+    private Rigidbody2D _rigidbody2d;
     private GroundChecker _groundChecker;
     private Animator _animator;
     private SpriteRenderer _sprite;
@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
+        _rigidbody2d = GetComponent<Rigidbody2D>();
         _groundChecker = GetComponentInChildren <GroundChecker>();
         _animator = GetComponent<Animator>();
         _sprite = GetComponent<SpriteRenderer>();
@@ -44,13 +44,13 @@ public class Movement : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && _groundChecker.Grounded)
-            _rb2d.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+            _rigidbody2d.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
     }
 
     private void FixedUpdate()
     {
         _velocity = _targetVelocity * _velocityModifier * Time.deltaTime;
-        _rb2d.position += _velocity;
+        _rigidbody2d.position += _velocity;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
